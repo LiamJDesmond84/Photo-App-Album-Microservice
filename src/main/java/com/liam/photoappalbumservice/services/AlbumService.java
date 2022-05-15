@@ -1,8 +1,10 @@
 package com.liam.photoappalbumservice.services;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-@Service
-public class AlbumService {
+import shared.AlbumDTO;
 
+public interface AlbumService {
+
+	List<AlbumDTO> getAlbums(String userId);
 }
