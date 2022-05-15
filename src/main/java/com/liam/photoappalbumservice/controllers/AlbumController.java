@@ -30,22 +30,21 @@ public class AlbumController {
     Logger logger = LoggerFactory.getLogger(this.getClass());
     
     @GetMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public List<AlbumEntity> userAlbums(@PathVariable String id) {
+    public List<AlbumEntity> getAlbums(@PathVariable String id) {
 
-        List<AlbumEntity> returnValue = new ArrayList<>();
+        List<AlbumEntity> albums = new ArrayList<>();
         
-        List<AlbumDTO> albumsEntities = albumServ.getAlbums(id);
+        List<AlbumDTO> albumDTOs = albumServ.getAlbums(id);
         
-        if(albumsEntities == null || albumsEntities.isEmpty())
-        {
-            return returnValue;
+        if(albumDTOs == null || albumDTOs.isEmpty()) {
+            return albums;
         }
         
         Type listType = new TypeToken<List<AlbumEntity>>(){}.getType();
  
-        returnValue = new ModelMapper().map(albumsEntities, listType);
-        logger.info("Returning " + returnValue.size() + " albums");
-        return returnValue;
+        albums = new ModelMapper().map(albumDTOs, listType);
+        logger.info("Returning " + albums.size() + " albums");
+        return albums;
     }
 
 }
