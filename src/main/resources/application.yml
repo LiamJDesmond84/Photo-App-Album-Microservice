@@ -1,18 +1,18 @@
-server:
-   port: 0
-   
-spring:
+#server:
+#   port: 0
+#   
+#spring:
    # Profile for USER-SERVICE.yml/properties in GitHub Config Repo
-   profiles:
-      active: ALBUM-SERVICE
+#   profiles:
+#      active: ALBUM-SERVICE
    # Instead of bootstrap.yml
-   config:
-      import: "optional:configserver:http://localhost:8888"
-   application:
-      name: ALBUM-SERVICE
-   devtools:
-      restart:
-         enabled: true
+#   config:
+#      import: "optional:configserver:http://localhost:8888"
+#   application:
+#      name: ALBUM-SERVICE
+#   devtools:
+#      restart:
+#         enabled: true
 
    # H2 Database
 #   datasource:
@@ -26,45 +26,46 @@ spring:
 #      hibernate:
 #         ddl-auto: update
    # H2 Console
-   h2:
-      console:
-         enabled: true
-         settings:
-            web-allow-others: true
-         
-   rabbitmq:
-     host: localhost
-#     port: 15672
-     port: 5672
-     username: guest
-     password: guest
-
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-      hostname: localhost
-      prefer-ip-address: true
-      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    
-# IPV4 Address(Preferred)
-gateway:
-   ip: 192.168.1.186
    
-token:
+#   h2:
+#      console:
+#         enabled: true
+#         settings:
+#            web-allow-others: true
+         
+#   rabbitmq:
+#     host: localhost
+#     port: 15672
+#     port: 5672
+#     username: guest
+#     password: guest
+#
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+#  instance:
+#      hostname: localhost
+#      prefer-ip-address: true
+#      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+#    
+# IPV4 Address(Preferred)
+#gateway:
+#   ip: 192.168.1.186
+#   
+#token:
    # 10 days
-   expiration_time: 864000000
-   secret: heyN0w619
-
+#   expiration_time: 864000000
+#   secret: heyN0w619
+#
 # For actuator
-management:
-   endpoints:
-      web:
-         exposure:
-            include: mappings   
+#management:
+#   endpoints:
+#      web:
+#         exposure:
+#            include: mappings
    
 # For actuator refresh posts - Doesn't work outside of Config Server - ?
 #management:
