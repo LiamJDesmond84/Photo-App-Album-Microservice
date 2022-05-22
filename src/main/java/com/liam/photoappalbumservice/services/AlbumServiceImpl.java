@@ -3,8 +3,11 @@ package com.liam.photoappalbumservice.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import shared.AlbumDTO;
 
+@Service
 public class AlbumServiceImpl implements AlbumService {
 
 	@Override
