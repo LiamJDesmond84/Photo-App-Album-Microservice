@@ -30,7 +30,7 @@ public class AlbumController {
     Logger logger = LoggerFactory.getLogger(this.getClass());
     
     @GetMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-    public List<AlbumEntity> getAlbums(@PathVariable String id) {
+    public List<AlbumEntity> getAlbums(@PathVariable Long id) {
 
         List<AlbumEntity> albums = new ArrayList<>();
         

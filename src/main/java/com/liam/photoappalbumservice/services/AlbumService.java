@@ -6,5 +6,5 @@ import shared.AlbumDTO;
 
 public interface AlbumService {
 
-	List<AlbumDTO> getAlbums(String userId);
+	List<AlbumDTO> getAlbums(Long id);
 }

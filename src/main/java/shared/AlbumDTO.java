@@ -6,7 +6,7 @@ public class AlbumDTO {
 	
     private String albumId;
     
-    private String userId;
+    private Long userId;
     
     private String name;
     
@@ -28,11 +28,11 @@ public class AlbumDTO {
 		this.albumId = albumId;
 	}
 
-	public String getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 

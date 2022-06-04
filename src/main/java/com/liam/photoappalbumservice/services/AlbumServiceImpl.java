@@ -11,7 +11,7 @@ import shared.AlbumDTO;
 public class AlbumServiceImpl implements AlbumService {
 
 	@Override
-    public List<AlbumDTO> getAlbums(String userId) {
+    public List<AlbumDTO> getAlbums(Long userId) {
         List<AlbumDTO> returnValue = new ArrayList<>();
         
         AlbumDTO albumDTO = new AlbumDTO();
